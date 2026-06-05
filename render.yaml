@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: stock-terminal
+    runtime: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      cd frontend && npm install && npm run build
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: REFRESH_TOKEN
+        sync: false

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+node_modules/
+static/
+ta_results.json
+.env
